@@ -1,13 +1,8 @@
 {
-  "background_color": "#284bbb",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "Quote Tool",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "Quote Tool",
-  "start_url": "/",
-  "theme_color": "#ffffff",
-  "id": "EAF's Quote Tool",
-  "description": "EAF's Quote Tool for marketing manager"
+    "name": "Quote Tool",
+    "short_name": "Quote Tool",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Quote Tool App .",
 }
