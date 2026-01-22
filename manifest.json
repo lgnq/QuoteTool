@@ -1,20 +1,13 @@
 {
-    "name": "Quote Tool",
-    "short_name": "QuoteTool",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#fff",
-    "description": "Quote Tool App ."
-    // "icons": [
-    //   {
-    //     "src": "./icons/icon-512.png",
-    //     "sizes": "512x512",
-    //     "type": "image/png"
-    //   },
-    //   {
-    //     "src": "./icons/icon-192.png",
-    //     "sizes": "192x192",
-    //     "type": "image/png"
-    //   }
-    // ]
-  }
+  "background_color": "#284bbb",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Quote Tool",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Quote Tool",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "id": "EAF's Quote Tool",
+  "description": "EAF's Quote Tool for marketing manager"
+}
