@@ -99,10 +99,10 @@ button:focus {
   outline: 0;
 }
 
-@media (max-width: 600px) {
-  .currency input {
+@media (max-width: 700px) {
+  /* .currency input {
     width: 200px;
-  }
+  } */
   .money-img {
   width: 75px;
 }
