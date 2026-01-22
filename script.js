@@ -53,8 +53,8 @@ function input_focus()
 
 function dc_eur_input()
 {
-  dc_usd.value = dc_eur.value * eur2usd;
-  dc_cny.value = dc_eur.value * eur2cny;
+  dc_usd.value = (parseFloat(dc_eur.value) * eur2usd).toFixed(4);
+  dc_cny.value = (parseFloat(dc_eur.value) * eur2cny).toFixed(4);
 
   rs_eur.value = dc_eur.value * (1+parseFloat(margin.value));
   rs_usd.value = dc_eur.value * eur2usd * (1+parseFloat(margin.value));
