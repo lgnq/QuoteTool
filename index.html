@@ -10,43 +10,59 @@
   <body>
     <div class="wrapper">
       <h1>Quote Tool</h1>
-      <p>Choose the currency and the amount to get the exchange rate</p>
+      <!-- <p>Choose the currency and the amount to get the exchange rate</p> -->
       <div class="preference">
         <label for="date">Date</label>
         <input type="text" name="date" id="date" size="30"/>
       </div>
+      
+      <div class="swap-rate-container">
+        <button class="btn" id="update">Update</button>
+        <div class="rate" id="update"></div>
+      </div>
 
       <p>Disti Cost</p>
-      <div class="preference">
+
+      <div class="container">
+      <div class="currency">
         <label for="dc_eur">EUR</label>
         <input type="text" name="dc_eur" id="dc_eur" size="8"/>
+      </div>
 
+      <div class="currency">
         <label for="dc_usd">USD</label>
         <input type="text" name="dc_usd" id="dc_usd" size="8"/>
+      </div>
 
+      <div class="currency">
         <label for="dc_cny">CNY</label>
         <input type="text" name="dc_cny" id="dc_cny" size="8"/>
       </div>
-      
+      </div>
+
       <p>Disti Margin</p>
-      <div class="preference">
+      <div class="currency">
         <label for="margin">Margin</label>
         <input type="text" name="margin" id="margin" size="8" value="0.15"/>
       </div>
       
       <p>Resale Price</p>
-      <div class="preference">
+      <div class="currency">
         <label for="rs_eur">EUR</label>
         <input type="text" name="rs_eur" id="rs_eur" size="8"/>
+      </div>
 
+      <div class="currency">
         <label for="rs_usd">USD</label>
         <input type="text" name="rs_usd" id="rs_usd" size="8"/>
-
+      </div>
+      
+      <div class="currency">
         <label for="rs_cny">CNY</label>
         <input type="text" name="rs_cny" id="rs_cny" size="8"/>
       </div>
-
-      <div class="container">
+                  
+      <!-- <div class="container">
         <div class="currency">
           <select id="currency-one">
             <option value="CHF">CHF</option>
@@ -77,7 +93,7 @@
           </select>
           <input type="number" id="amount-two" placeholder="0" />
         </div>
-      </div>
+      </div> -->
     </div>
     <script src="script.js"></script>
   </body>
