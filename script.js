@@ -97,7 +97,7 @@ function rs_eur_input()
 
 function rs_usd_input()
 {
-  rs_enu.value = (parseFloat(rs_usd.value) * usd2eur).toFixed(4);
+  rs_eur.value = (parseFloat(rs_usd.value) * usd2eur).toFixed(4);
   rs_cny.value = (parseFloat(rs_usd.value) * usd2cny).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 
