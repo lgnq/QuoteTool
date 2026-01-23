@@ -56,10 +56,10 @@ function dc_eur_input()
   dc_usd.value = (parseFloat(dc_eur.value) * eur2usd).toFixed(4);
   dc_cny.value = (parseFloat(dc_eur.value) * eur2cny).toFixed(4);
 
-  rs_eur.value = (parseFloat(dc_eur.value) * (1+parseFloat(margin.value))).toFixed(4);
-  rs_usd.value = (parseFloat(dc_eur.value) * eur2usd * (1+parseFloat(margin.value))).toFixed(4);
-  rs_cny.value = (parseFloat(dc_eur.value) * eur2cny * (1+parseFloat(margin.value))).toFixed(4);
-  rs_cny_vat.value = parseFloat(rs_cny.value) * 1.13;
+  rs_eur.value = (parseFloat(dc_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_usd.value = (parseFloat(dc_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_cny.value = (parseFloat(dc_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 }
 
 function dc_usd_input()
@@ -67,9 +67,9 @@ function dc_usd_input()
   dc_eur.value = (parseFloat(dc_usd.value) * usd2eur).toFixed(4);
   dc_cny.value = (parseFloat(dc_usd.value) * usd2cny).toFixed(4);
 
-  rs_usd.value = (parseFloat(dc_usd.value) * (1+parseFloat(margin.value))).toFixed(4);
-  rs_eur.value = (parseFloat(dc_usd.value) * usd2eur * (1+parseFloat(margin.value))).toFixed(4);
-  rs_cny.value = (parseFloat(dc_usd.value) * usd2cny * (1+parseFloat(margin.value))).toFixed(4);
+  rs_eur.value = (parseFloat(dc_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_usd.value = (parseFloat(dc_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_cny.value = (parseFloat(dc_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 }
 
@@ -78,9 +78,9 @@ function dc_cny_input()
   dc_usd.value = (parseFloat(dc_cny.value) * cny2usd).toFixed(4);
   dc_eur.value = (parseFloat(dc_cny.value) * cny2eur).toFixed(4);
 
-  rs_cny.value = (parseFloat(dc_cny.value) * (1+parseFloat(margin.value))).toFixed(4);
-  rs_eur.value = (parseFloat(dc_cny.value) * cny2eur * (1+parseFloat(margin.value))).toFixed(4);
-  rs_usd.value = (parseFloat(dc_cny.value) * cny2usd * (1+parseFloat(margin.value))).toFixed(4);
+  rs_eur.value = (parseFloat(dc_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_usd.value = (parseFloat(dc_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  rs_cny.value = (parseFloat(dc_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 }
 
@@ -90,9 +90,9 @@ function rs_eur_input()
   rs_cny.value = (parseFloat(rs_eur.value) * eur2cny).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 
-  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_eur.value = (parseFloat(rs_eur.value) * parseFloat(margin.value)).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) * parseFloat(margin.value)).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) * parseFloat(margin.value)).toFixed(4);
 }
 
 function rs_usd_input()
@@ -101,9 +101,9 @@ function rs_usd_input()
   rs_cny.value = (parseFloat(rs_usd.value) * usd2cny).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 
-  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_eur.value = (parseFloat(rs_eur.value) * parseFloat(margin.value)).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) * parseFloat(margin.value)).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) * parseFloat(margin.value)).toFixed(4);
 }
 
 function rs_cny_input()
@@ -112,9 +112,9 @@ function rs_cny_input()
   rs_usd.value = (parseFloat(rs_cny.value) * cny2usd).toFixed(4);
   rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
 
-  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_eur.value = (parseFloat(rs_eur.value) * parseFloat(margin.value)).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) * parseFloat(margin.value)).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) * parseFloat(margin.value)).toFixed(4);
 }
 
 function rs_cny_vat_input()
@@ -123,9 +123,9 @@ function rs_cny_vat_input()
   rs_eur.value = (parseFloat(rs_cny.value) * cny2eur).toFixed(4);
   rs_usd.value = (parseFloat(rs_cny.value) * cny2usd).toFixed(4);
 
-  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
-  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_eur.value = (parseFloat(rs_eur.value) * parseFloat(margin.value)).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) * parseFloat(margin.value)).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) * parseFloat(margin.value)).toFixed(4);
 }
 
 // currencyOne.addEventListener("change", calculate);
