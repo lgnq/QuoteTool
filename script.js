@@ -86,19 +86,46 @@ function dc_cny_input()
 
 function rs_eur_input()
 {
-  rs_eur.value = dc_eur.value * margin.value;
-  rs_usd.value = dc_eur.value * eur2usd * margin.value;
-  rs_cny.value = dc_eur.value * eur2cny * margin.value;
+  rs_usd.value = (parseFloat(rs_eur.value) * eur2usd).toFixed(4);
+  rs_cny.value = (parseFloat(rs_eur.value) * eur2cny).toFixed(4);
+  rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
+
+  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
 }
 
 function rs_usd_input()
 {
-  rs_usd.value = dc_usd.value * margin.value;
+  rs_enu.value = (parseFloat(rs_usd.value) * usd2eur).toFixed(4);
+  rs_cny.value = (parseFloat(rs_usd.value) * usd2cny).toFixed(4);
+  rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
+
+  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
 }
 
 function rs_cny_input()
 {
-  rs_cny.value = dc_cny.value * margin.value;
+  rs_eur.value = (parseFloat(rs_cny.value) * cny2eur).toFixed(4);
+  rs_usd.value = (parseFloat(rs_cny.value) * cny2usd).toFixed(4);
+  rs_cny_vat.value = (parseFloat(rs_cny.value) * 1.13).toFixed(4);
+
+  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
+}
+
+function rs_cny_vat_input()
+{
+  rs_cny.value = (parseFloat(rs_cny_vat.value) / 1.13).toFixed(4);
+  rs_eur.value = (parseFloat(rs_cny.value) * cny2eur).toFixed(4);
+  rs_usd.value = (parseFloat(rs_cny.value) * cny2usd).toFixed(4);
+
+  dc_eur.value = (parseFloat(rs_eur.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_usd.value = (parseFloat(rs_usd.value) / (1+parseFloat(margin.value))).toFixed(4);
+  dc_cny.value = (parseFloat(rs_cny.value) / (1+parseFloat(margin.value))).toFixed(4);
 }
 
 // currencyOne.addEventListener("change", calculate);
@@ -123,6 +150,9 @@ rs_usd.addEventListener("focus", input_focus);
 
 rs_cny.addEventListener("input", rs_cny_input);
 rs_cny.addEventListener("focus", input_focus);
+
+rs_cny_vat.addEventListener("input", rs_cny_vat_input);
+rs_cny_vat.addEventListener("focus", input_focus);
 
 update_exchange_rate.addEventListener("click", () => {
   getExchangeRate("EUR", "USD", "CNY");
