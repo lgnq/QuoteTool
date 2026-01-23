@@ -65,7 +65,7 @@ function dc_eur_input()
 function dc_usd_input()
 {
   dc_eur.value = (parseFloat(dc_usd.value) * usd2eur).toFixed(4);
-  dc_cny.value = (parseFloat(dc_usd.value * usd2cny).toFixed(4);
+  dc_cny.value = (parseFloat(dc_usd.value) * usd2cny).toFixed(4);
 
   rs_usd.value = (parseFloat(dc_usd.value) * (1+parseFloat(margin.value))).toFixed(4);
   rs_eur.value = (parseFloat(dc_usd.value) * usd2eur * (1+parseFloat(margin.value))).toFixed(4);
